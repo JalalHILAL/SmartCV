@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "智能简历检查器"
+  },
+  "landing": {
+    "title": "智能简历检查器",
+    "subtitle": "让AI即时改善您的简历",
+    "getStarted": "开始使用",
+    "features": {
+      "structure": "结构和清晰度分析",
+      "keywords": "缺失关键词检测",
+      "improvements": "可操作的改进建议",
+      "grammar": "语法和格式检查"
+    },
+    "illustration": "📄 简历示意图"
+  },
+  "upload": {
+    "title": "上传您的简历",
+    "titleProcessing": "正在分析您的简历",
+    "subtitle": "获取AI驱动的即时简历反馈",
+    "subtitleProcessing": "请稍候,我们正在分析您的简历...",
+    "dragDrop": "将您的简历拖放到这里",
+    "or": "或",
+    "browseFiles": "浏览文件",
+    "fileRequirements": "文件要求:",
+    "acceptedFormats": "接受的格式:PDF、DOCX",
+    "maxFileSize": "最大文件大小:10 MB",
+    "textSelectable": "确保文本可选择(非扫描图像)",
+    "analyzing": "分析中...",
+    "tryAgain": "重试",
+    "steps": {
+      "uploaded": "文件已上传",
+      "extracted": "文本已提取",
+      "analyzing": "正在运行AI分析",
+      "generating": "正在生成报告"
+    },
+    "errors": {
+      "invalidFormat": "请上传PDF或DOCX文件",
+      "fileSize": "文件大小超过10 MB限制",
+      "uploadFailed": "文件上传失败。请检查您的连接并重试。",
+      "analysisFailed": "分析失败。请重试或联系支持。",
+      "statusFailed": "无法获取分析状态。请重试。"
+    }
+  },
+  "results": {
+    "title": "分析完成!",
+    "subtitle": "这是您的详细简历反馈报告",
+    "overallScore": "总体评分",
+    "downloadReport": "📥 下载报告",
+    "copyFeedback": "📋 复制反馈",
+    "analyzeAnother": "🔄 分析另一份",
+    "strengths": "优势",
+    "weakPoints": "弱点",
+    "missingKeywords": "缺失的关键词",
+    "suggestions": "改进建议",
+    "loading": "正在加载您的结果...",
+    "retry": "重试",
+    "goToUpload": "前往上传",
+    "errors": {
+      "loadFailed": "无法加载分析结果。请重试。"
+    },
+    "toastCopied": "反馈已复制到剪贴板!"
+  },
+  "language": {
+    "name": "中文",
+    "select": "语言"
+  }
+}

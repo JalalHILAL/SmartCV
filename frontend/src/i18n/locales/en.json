@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "Smart CV Checker"
+  },
+  "landing": {
+    "title": "Smart CV Checker",
+    "subtitle": "Let AI improve your resume instantly",
+    "getStarted": "Get Started",
+    "features": {
+      "structure": "Structure & clarity analysis",
+      "keywords": "Missing keywords detection",
+      "improvements": "Actionable improvements",
+      "grammar": "Grammar & formatting checks"
+    },
+    "illustration": "📄 CV Illustration"
+  },
+  "upload": {
+    "title": "Upload Your CV",
+    "titleProcessing": "Analyzing Your CV",
+    "subtitle": "Get instant AI-powered feedback on your resume",
+    "subtitleProcessing": "Please wait while we analyze your resume...",
+    "dragDrop": "Drag and drop your CV here",
+    "or": "or",
+    "browseFiles": "Browse Files",
+    "fileRequirements": "File Requirements:",
+    "acceptedFormats": "Accepted formats: PDF, DOCX",
+    "maxFileSize": "Maximum file size: 10 MB",
+    "textSelectable": "Ensure text is selectable (not scanned image)",
+    "analyzing": "Analyzing...",
+    "tryAgain": "Try Again",
+    "steps": {
+      "uploaded": "File uploaded",
+      "extracted": "Text extracted",
+      "analyzing": "Running AI analysis",
+      "generating": "Generating report"
+    },
+    "errors": {
+      "invalidFormat": "Please upload a PDF or DOCX file",
+      "fileSize": "File size exceeds 10 MB limit",
+      "uploadFailed": "File upload failed. Please check your connection and try again.",
+      "analysisFailed": "Analysis failed. Please try again or contact support.",
+      "statusFailed": "Unable to get analysis status. Please try again."
+    }
+  },
+  "results": {
+    "title": "Analysis Complete!",
+    "subtitle": "Here's your detailed CV feedback report",
+    "overallScore": "Overall Score",
+    "downloadReport": "📥 Download Report",
+    "copyFeedback": "📋 Copy Feedback",
+    "analyzeAnother": "🔄 Analyze Another",
+    "strengths": "Strengths",
+    "weakPoints": "Weak Points",
+    "missingKeywords": "Missing Keywords",
+    "suggestions": "Suggested Improvements",
+    "loading": "Loading your results...",
+    "retry": "Retry",
+    "goToUpload": "Go to Upload",
+    "errors": {
+      "loadFailed": "Failed to load analysis results. Please try again."
+    },
+    "toastCopied": "Feedback copied to clipboard!"
+  },
+  "language": {
+    "name": "English",
+    "select": "Language"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "Verificador de CV Inteligente"
+  },
+  "landing": {
+    "title": "Verificador de CV Inteligente",
+    "subtitle": "Deja que la IA mejore tu currículum al instante",
+    "getStarted": "Comenzar",
+    "features": {
+      "structure": "Análisis de estructura y claridad",
+      "keywords": "Detección de palabras clave faltantes",
+      "improvements": "Mejoras accionables",
+      "grammar": "Verificación de gramática y formato"
+    },
+    "illustration": "📄 Ilustración de CV"
+  },
+  "upload": {
+    "title": "Sube tu CV",
+    "titleProcessing": "Analizando tu CV",
+    "subtitle": "Obtén comentarios instantáneos impulsados por IA sobre tu currículum",
+    "subtitleProcessing": "Por favor espera mientras analizamos tu currículum...",
+    "dragDrop": "Arrastra y suelta tu CV aquí",
+    "or": "o",
+    "browseFiles": "Explorar Archivos",
+    "fileRequirements": "Requisitos del archivo:",
+    "acceptedFormats": "Formatos aceptados: PDF, DOCX",
+    "maxFileSize": "Tamaño máximo del archivo: 10 MB",
+    "textSelectable": "Asegúrate de que el texto sea seleccionable (no imagen escaneada)",
+    "analyzing": "Analizando...",
+    "tryAgain": "Intentar de nuevo",
+    "steps": {
+      "uploaded": "Archivo subido",
+      "extracted": "Texto extraído",
+      "analyzing": "Ejecutando análisis de IA",
+      "generating": "Generando informe"
+    },
+    "errors": {
+      "invalidFormat": "Por favor sube un archivo PDF o DOCX",
+      "fileSize": "El tamaño del archivo excede el límite de 10 MB",
+      "uploadFailed": "Falló la carga del archivo. Por favor verifica tu conexión e intenta de nuevo.",
+      "analysisFailed": "Falló el análisis. Por favor intenta de nuevo o contacta soporte.",
+      "statusFailed": "No se pudo obtener el estado del análisis. Por favor intenta de nuevo."
+    }
+  },
+  "results": {
+    "title": "¡Análisis Completo!",
+    "subtitle": "Aquí está tu informe detallado de comentarios sobre tu CV",
+    "overallScore": "Puntuación General",
+    "downloadReport": "📥 Descargar Informe",
+    "copyFeedback": "📋 Copiar Comentarios",
+    "analyzeAnother": "🔄 Analizar Otro",
+    "strengths": "Fortalezas",
+    "weakPoints": "Puntos Débiles",
+    "missingKeywords": "Palabras Clave Faltantes",
+    "suggestions": "Mejoras Sugeridas",
+    "loading": "Cargando tus resultados...",
+    "retry": "Reintentar",
+    "goToUpload": "Ir a Cargar",
+    "errors": {
+      "loadFailed": "No se pudieron cargar los resultados del análisis. Por favor intenta de nuevo."
+    },
+    "toastCopied": "¡Comentarios copiados al portapapeles!"
+  },
+  "language": {
+    "name": "Español",
+    "select": "Idioma"
+  }
+}

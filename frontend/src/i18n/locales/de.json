@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "Intelligenter Lebenslauf-Prüfer"
+  },
+  "landing": {
+    "title": "Intelligenter Lebenslauf-Prüfer",
+    "subtitle": "Lassen Sie KI Ihren Lebenslauf sofort verbessern",
+    "getStarted": "Loslegen",
+    "features": {
+      "structure": "Struktur- und Klarheitsanalyse",
+      "keywords": "Erkennung fehlender Schlüsselwörter",
+      "improvements": "Umsetzbare Verbesserungen",
+      "grammar": "Grammatik- und Formatierungsprüfungen"
+    },
+    "illustration": "📄 Lebenslauf-Illustration"
+  },
+  "upload": {
+    "title": "Laden Sie Ihren Lebenslauf hoch",
+    "titleProcessing": "Analyse Ihres Lebenslaufs",
+    "subtitle": "Erhalten Sie sofortiges KI-gestütztes Feedback zu Ihrem Lebenslauf",
+    "subtitleProcessing": "Bitte warten Sie, während wir Ihren Lebenslauf analysieren...",
+    "dragDrop": "Ziehen Sie Ihren Lebenslauf hierher",
+    "or": "oder",
+    "browseFiles": "Dateien durchsuchen",
+    "fileRequirements": "Dateianforderungen:",
+    "acceptedFormats": "Akzeptierte Formate: PDF, DOCX",
+    "maxFileSize": "Maximale Dateigröße: 10 MB",
+    "textSelectable": "Stellen Sie sicher, dass der Text auswählbar ist (kein gescanntes Bild)",
+    "analyzing": "Wird analysiert...",
+    "tryAgain": "Erneut versuchen",
+    "steps": {
+      "uploaded": "Datei hochgeladen",
+      "extracted": "Text extrahiert",
+      "analyzing": "KI-Analyse wird durchgeführt",
+      "generating": "Bericht wird erstellt"
+    },
+    "errors": {
+      "invalidFormat": "Bitte laden Sie eine PDF- oder DOCX-Datei hoch",
+      "fileSize": "Dateigröße überschreitet das Limit von 10 MB",
+      "uploadFailed": "Datei-Upload fehlgeschlagen. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+      "analysisFailed": "Analyse fehlgeschlagen. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support.",
+      "statusFailed": "Analysestatus konnte nicht abgerufen werden. Bitte versuchen Sie es erneut."
+    }
+  },
+  "results": {
+    "title": "Analyse Abgeschlossen!",
+    "subtitle": "Hier ist Ihr detaillierter Lebenslauf-Feedback-Bericht",
+    "overallScore": "Gesamtpunktzahl",
+    "downloadReport": "📥 Bericht herunterladen",
+    "copyFeedback": "📋 Feedback kopieren",
+    "analyzeAnother": "🔄 Weiteren analysieren",
+    "strengths": "Stärken",
+    "weakPoints": "Schwächen",
+    "missingKeywords": "Fehlende Schlüsselwörter",
+    "suggestions": "Vorgeschlagene Verbesserungen",
+    "loading": "Ihre Ergebnisse werden geladen...",
+    "retry": "Wiederholen",
+    "goToUpload": "Zum Hochladen gehen",
+    "errors": {
+      "loadFailed": "Analyseergebnisse konnten nicht geladen werden. Bitte versuchen Sie es erneut."
+    },
+    "toastCopied": "Feedback in die Zwischenablage kopiert!"
+  },
+  "language": {
+    "name": "Deutsch",
+    "select": "Sprache"
+  }
+}

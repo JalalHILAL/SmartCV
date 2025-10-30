@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "Vérificateur de CV Intelligent"
+  },
+  "landing": {
+    "title": "Vérificateur de CV Intelligent",
+    "subtitle": "Laissez l'IA améliorer votre CV instantanément",
+    "getStarted": "Commencer",
+    "features": {
+      "structure": "Analyse de structure et de clarté",
+      "keywords": "Détection des mots-clés manquants",
+      "improvements": "Améliorations concrètes",
+      "grammar": "Vérifications grammaticales et de mise en forme"
+    },
+    "illustration": "📄 Illustration de CV"
+  },
+  "upload": {
+    "title": "Téléchargez votre CV",
+    "titleProcessing": "Analyse de votre CV",
+    "subtitle": "Obtenez des commentaires instantanés alimentés par l'IA sur votre CV",
+    "subtitleProcessing": "Veuillez patienter pendant que nous analysons votre CV...",
+    "dragDrop": "Glissez et déposez votre CV ici",
+    "or": "ou",
+    "browseFiles": "Parcourir les fichiers",
+    "fileRequirements": "Exigences du fichier :",
+    "acceptedFormats": "Formats acceptés : PDF, DOCX",
+    "maxFileSize": "Taille maximale du fichier : 10 Mo",
+    "textSelectable": "Assurez-vous que le texte est sélectionnable (pas une image scannée)",
+    "analyzing": "Analyse en cours...",
+    "tryAgain": "Réessayer",
+    "steps": {
+      "uploaded": "Fichier téléchargé",
+      "extracted": "Texte extrait",
+      "analyzing": "Exécution de l'analyse IA",
+      "generating": "Génération du rapport"
+    },
+    "errors": {
+      "invalidFormat": "Veuillez télécharger un fichier PDF ou DOCX",
+      "fileSize": "La taille du fichier dépasse la limite de 10 Mo",
+      "uploadFailed": "Échec du téléchargement du fichier. Veuillez vérifier votre connexion et réessayer.",
+      "analysisFailed": "Échec de l'analyse. Veuillez réessayer ou contacter le support.",
+      "statusFailed": "Impossible d'obtenir le statut de l'analyse. Veuillez réessayer."
+    }
+  },
+  "results": {
+    "title": "Analyse Terminée !",
+    "subtitle": "Voici votre rapport détaillé de commentaires sur votre CV",
+    "overallScore": "Score Global",
+    "downloadReport": "📥 Télécharger le Rapport",
+    "copyFeedback": "📋 Copier les Commentaires",
+    "analyzeAnother": "🔄 Analyser un Autre",
+    "strengths": "Points Forts",
+    "weakPoints": "Points Faibles",
+    "missingKeywords": "Mots-clés Manquants",
+    "suggestions": "Améliorations Suggérées",
+    "loading": "Chargement de vos résultats...",
+    "retry": "Réessayer",
+    "goToUpload": "Aller au Téléchargement",
+    "errors": {
+      "loadFailed": "Échec du chargement des résultats de l'analyse. Veuillez réessayer."
+    },
+    "toastCopied": "Commentaires copiés dans le presse-papiers !"
+  },
+  "language": {
+    "name": "Français",
+    "select": "Langue"
+  }
+}
