@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Header from '../components/Header'
 import FileUpload from '../components/FileUpload'
 
 export default function UploadPage() {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const [isProcessing, setIsProcessing] = useState(false)
   const [error, setError] = useState('')
   const [selectedFile, setSelectedFile] = useState(null)
@@ -18,12 +20,12 @@ export default function UploadPage() {
     // Check file extension
     const extension = file.name.split('.').pop().toLowerCase()
     if (!['pdf', 'docx'].includes(extension)) {
-      return 'Please upload a PDF or DOCX file'
+      return t('upload.errors.invalidFormat')
     }
 
     // Check file size
     if (file.size > MAX_FILE_SIZE) {
-      return 'File size exceeds 10 MB limit'
+      return t('upload.errors.fileSize')
     }
 
     return null
@@ -62,7 +64,7 @@ export default function UploadPage() {
       pollProgress(data.analysis_id)
 
     } catch (err) {
-      setError(err.message || 'File upload failed. Please check your connection and try again.')
+      setError(err.message || t('upload.errors.uploadFailed'))
       setIsProcessing(false)
     }
   }
@@ -90,13 +92,13 @@ export default function UploadPage() {
         // Check if failed
         if (data.status === 'failed') {
           clearInterval(interval)
-          setError(data.error || 'Analysis failed. Please try again or contact support.')
+          setError(data.error || t('upload.errors.analysisFailed'))
           setIsProcessing(false)
         }
 
       } catch (err) {
         clearInterval(interval)
-        setError('Unable to get analysis status. Please try again.')
+        setError(t('upload.errors.statusFailed'))
         setIsProcessing(false)
       }
     }, 1000) // Poll every second
@@ -113,10 +115,10 @@ export default function UploadPage() {
 
   const getStepDisplay = (step) => {
     const steps = [
-      { label: 'File uploaded', complete: currentStep > 1, current: currentStep === 1 },
-      { label: 'Text extracted', complete: currentStep > 2, current: currentStep === 2 },
-      { label: 'Running AI analysis', complete: currentStep > 3, current: currentStep === 3 },
-      { label: 'Generating report', complete: currentStep > 4, current: currentStep === 4 }
+      { label: t('upload.steps.uploaded'), complete: currentStep > 1, current: currentStep === 1 },
+      { label: t('upload.steps.extracted'), complete: currentStep > 2, current: currentStep === 2 },
+      { label: t('upload.steps.analyzing'), complete: currentStep > 3, current: currentStep === 3 },
+      { label: t('upload.steps.generating'), complete: currentStep > 4, current: currentStep === 4 }
     ]
 
     return steps.map((s, i) => ({
@@ -150,12 +152,12 @@ export default function UploadPage() {
           {/* Page Header */}
           <div className="text-center mb-10">
             <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-3">
-              {isProcessing ? 'Analyzing Your CV' : 'Upload Your CV'}
+              {isProcessing ? t('upload.titleProcessing') : t('upload.title')}
             </h1>
             <p className="text-base text-gray-600 dark:text-gray-400">
               {isProcessing
-                ? 'Please wait while we analyze your resume...'
-                : 'Get instant AI-powered feedback on your resume'
+                ? t('upload.subtitleProcessing')
+                : t('upload.subtitle')
               }
             </p>
           </div>
@@ -182,7 +184,7 @@ export default function UploadPage() {
 
               {/* Progress Label */}
               <p className="text-lg font-bold text-center text-gray-800 dark:text-gray-200 mb-4">
-                Analyzing...
+                {t('upload.analyzing')}
               </p>
 
               {/* Progress Bar */}
@@ -222,7 +224,7 @@ export default function UploadPage() {
                     onClick={resetUpload}
                     className="w-full py-3 px-6 bg-gray-300 dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 font-bold hover:bg-gray-400 dark:hover:bg-gray-600"
                   >
-                    Try Again
+                    {t('upload.tryAgain')}
                   </button>
                 </div>
               )}
