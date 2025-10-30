@@ -1,14 +1,16 @@
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Header from '../components/Header'
 
 export default function LandingPage() {
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const features = [
-    { icon: '✅', text: 'Structure & clarity analysis' },
-    { icon: '🔑', text: 'Missing keywords detection' },
-    { icon: '💬', text: 'Actionable improvements' },
-    { icon: '⚠️', text: 'Grammar & formatting checks' }
+    { icon: '✅', text: t('landing.features.structure') },
+    { icon: '🔑', text: t('landing.features.keywords') },
+    { icon: '💬', text: t('landing.features.improvements') },
+    { icon: '⚠️', text: t('landing.features.grammar') }
   ]
 
   return (
@@ -21,10 +23,10 @@ export default function LandingPage() {
             {/* Left Section - Hero Content */}
             <div>
               <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-200 mb-6">
-                Smart CV Checker
+                {t('landing.title')}
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                Let AI improve your resume instantly
+                {t('landing.subtitle')}
               </p>
 
               {/* Feature List */}
@@ -48,7 +50,7 @@ export default function LandingPage() {
               <div className="bg-gray-100 dark:bg-dark-secondary border-2 border-gray-300 dark:border-gray-700 rounded-xl p-10">
                 {/* Visual Placeholder */}
                 <div className="h-72 border-2 border-dashed border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center mb-8">
-                  <span className="text-4xl">📄 CV Illustration</span>
+                  <span className="text-4xl">{t('landing.illustration')}</span>
                 </div>
 
                 {/* CTA Button */}
@@ -56,7 +58,7 @@ export default function LandingPage() {
                   onClick={() => navigate('/upload')}
                   className="w-full py-4 px-12 bg-blue-600 dark:bg-blue-500 text-white text-lg font-bold rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
                 >
-                  Get Started
+                  {t('landing.getStarted')}
                 </button>
               </div>
             </div>
