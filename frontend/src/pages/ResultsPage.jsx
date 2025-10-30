@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import Header from '../components/Header'
 import Toast from '../components/Toast'
 import { formatFeedbackForClipboard } from '../utils/formatFeedback'
@@ -7,6 +8,7 @@ import { generatePDF } from '../utils/generatePDF'
 
 export default function ResultsPage() {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const [searchParams] = useSearchParams()
   const analysisId = searchParams.get('id')
 
@@ -36,7 +38,7 @@ export default function ResultsPage() {
       setAnalysisData(data)
       setLoading(false)
     } catch (err) {
-      setError(err.message || 'Failed to load analysis results. Please try again.')
+      setError(err.message || t('results.errors.loadFailed'))
       setLoading(false)
     }
   }
@@ -51,7 +53,7 @@ export default function ResultsPage() {
     if (analysisData) {
       const formattedText = formatFeedbackForClipboard(analysisData)
       await navigator.clipboard.writeText(formattedText)
-      setToastMessage('Feedback copied to clipboard!')
+      setToastMessage(t('results.toastCopied'))
       setTimeout(() => setToastMessage(''), 3000)
     }
   }
@@ -67,7 +69,7 @@ export default function ResultsPage() {
         <main className="pt-32 pb-10 px-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-spin h-12 w-12 border-4 border-gray-300 dark:border-gray-700 border-t-gray-800 dark:border-t-gray-200 rounded-full mx-auto mb-4"></div>
-            <p className="text-gray-600 dark:text-gray-400">Loading your results...</p>
+            <p className="text-gray-600 dark:text-gray-400">{t('results.loading')}</p>
           </div>
         </main>
       </div>
@@ -86,13 +88,13 @@ export default function ResultsPage() {
                 onClick={fetchAnalysisResults}
                 className="px-6 py-3 bg-gray-300 dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 font-bold hover:bg-gray-400 dark:hover:bg-gray-600"
               >
-                Retry
+                {t('results.retry')}
               </button>
               <button
                 onClick={() => navigate('/upload')}
                 className="px-6 py-3 bg-gray-300 dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 font-bold hover:bg-gray-400 dark:hover:bg-gray-600"
               >
-                Go to Upload
+                {t('results.goToUpload')}
               </button>
             </div>
           </div>
@@ -110,16 +112,16 @@ export default function ResultsPage() {
           {/* Page Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-3">
-              Analysis Complete!
+              {t('results.title')}
             </h1>
             <p className="text-base text-gray-600 dark:text-gray-400 mb-4">
-              Here's your detailed CV feedback report
+              {t('results.subtitle')}
             </p>
 
             {/* Overall Score Badge */}
             <div className="inline-block px-4 py-2 bg-gray-200 dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-600 rounded-lg">
               <span className="font-bold text-sm text-gray-800 dark:text-gray-200">
-                Overall Score: {analysisData.overall_score}/10
+                {t('results.overallScore')}: {analysisData.overall_score}/10
               </span>
             </div>
           </div>
@@ -130,19 +132,19 @@ export default function ResultsPage() {
               onClick={handleDownloadPDF}
               className="px-6 py-3 bg-gray-300 dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 font-bold text-sm hover:bg-gray-400 dark:hover:bg-gray-600"
             >
-              📥 Download Report
+              {t('results.downloadReport')}
             </button>
             <button
               onClick={handleCopyFeedback}
               className="px-6 py-3 bg-gray-300 dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 font-bold text-sm hover:bg-gray-400 dark:hover:bg-gray-600"
             >
-              📋 Copy Feedback
+              {t('results.copyFeedback')}
             </button>
             <button
               onClick={handleAnalyzeAnother}
               className="px-6 py-3 bg-gray-300 dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 font-bold text-sm hover:bg-gray-400 dark:hover:bg-gray-600"
             >
-              🔄 Analyze Another
+              {t('results.analyzeAnother')}
             </button>
           </div>
 
@@ -152,7 +154,7 @@ export default function ResultsPage() {
           <div className="bg-gray-100 dark:bg-dark-secondary border-2 border-gray-300 dark:border-gray-700 rounded-xl p-6 mb-6">
             <div className="flex items-center gap-3 pb-3 border-b-2 border-gray-300 dark:border-gray-700 mb-4">
               <span className="text-3xl">✅</span>
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Strengths</h2>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">{t('results.strengths')}</h2>
             </div>
             <div className="space-y-0">
               {analysisData.strengths.map((item, index) => (
@@ -172,7 +174,7 @@ export default function ResultsPage() {
           <div className="bg-gray-100 dark:bg-dark-secondary border-2 border-gray-300 dark:border-gray-700 rounded-xl p-6 mb-6">
             <div className="flex items-center gap-3 pb-3 border-b-2 border-gray-300 dark:border-gray-700 mb-4">
               <span className="text-3xl">⚠️</span>
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Weak Points</h2>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">{t('results.weakPoints')}</h2>
             </div>
             <div className="space-y-0">
               {analysisData.weak_points.map((item, index) => (
@@ -192,7 +194,7 @@ export default function ResultsPage() {
           <div className="bg-gray-100 dark:bg-dark-secondary border-2 border-gray-300 dark:border-gray-700 rounded-xl p-6 mb-6">
             <div className="flex items-center gap-3 pb-3 border-b-2 border-gray-300 dark:border-gray-700 mb-4">
               <span className="text-3xl">🔑</span>
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Missing Keywords</h2>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">{t('results.missingKeywords')}</h2>
             </div>
             <div className="flex flex-wrap gap-2">
               {analysisData.missing_keywords.map((keyword, index) => (
@@ -210,7 +212,7 @@ export default function ResultsPage() {
           <div className="bg-gray-100 dark:bg-dark-secondary border-2 border-gray-300 dark:border-gray-700 rounded-xl p-6 mb-6">
             <div className="flex items-center gap-3 pb-3 border-b-2 border-gray-300 dark:border-gray-700 mb-4">
               <span className="text-3xl">💬</span>
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Suggested Improvements</h2>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">{t('results.suggestions')}</h2>
             </div>
             <div className="space-y-0">
               {analysisData.suggestions.map((item, index) => (
