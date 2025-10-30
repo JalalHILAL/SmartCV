@@ -1,8 +1,10 @@
 import { useState, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function FileUpload({ onFileSelect, error }) {
   const [isDragging, setIsDragging] = useState(false)
   const fileInputRef = useRef(null)
+  const { t } = useTranslation()
 
   const handleDragOver = (e) => {
     e.preventDefault()
@@ -51,14 +53,14 @@ export default function FileUpload({ onFileSelect, error }) {
       >
         <div className="text-5xl mb-4">📄</div>
         <p className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">
-          Drag and drop your CV here
+          {t('upload.dragDrop')}
         </p>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">or</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{t('upload.or')}</p>
         <button
           type="button"
           className="px-8 py-3 bg-gray-300 dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-600 rounded-md text-gray-800 dark:text-gray-200 font-bold text-base hover:bg-gray-400 dark:hover:bg-gray-600"
         >
-          Browse Files
+          {t('upload.browseFiles')}
         </button>
         <input
           ref={fileInputRef}
@@ -71,11 +73,11 @@ export default function FileUpload({ onFileSelect, error }) {
 
       {/* File Requirements */}
       <div className="mt-6 bg-white dark:bg-dark-secondary border-2 border-gray-300 dark:border-gray-700 rounded-lg p-4">
-        <p className="font-bold text-gray-800 dark:text-gray-200 mb-2">File Requirements:</p>
+        <p className="font-bold text-gray-800 dark:text-gray-200 mb-2">{t('upload.fileRequirements')}</p>
         <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
-          <li>✓ Accepted formats: PDF, DOCX</li>
-          <li>✓ Maximum file size: 10 MB</li>
-          <li>✓ Ensure text is selectable (not scanned image)</li>
+          <li>✓ {t('upload.acceptedFormats')}</li>
+          <li>✓ {t('upload.maxFileSize')}</li>
+          <li>✓ {t('upload.textSelectable')}</li>
         </ul>
       </div>
 
